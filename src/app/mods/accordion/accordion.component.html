@@ -1,0 +1,14 @@
+<div>
+  <ng-container *ngFor="let item of items; let i = index">
+    <header
+      [ngClass]="{ active: i === openItemIndex }"
+      (click)="onHeaderToggle(i)"
+    >
+      {{ item.title }}
+    </header>
+
+    <div *ngIf="i === openItemIndex">
+      <p>{{ item.content }}</p>
+    </div>
+  </ng-container>
+</div>
